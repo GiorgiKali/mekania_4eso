@@ -1,0 +1,8 @@
+[
+{"id":"T_dark","tipo":"tema","nombre":"Tema oscuro","precio":0,"valor":"oscuro"},
+{"id":"T_light","tipo":"tema","nombre":"Tema claro","precio":0,"valor":"claro"},
+{"id":"T_neon","tipo":"tema","nombre":"Tema Neón","precio":300,"valor":"neon"},
+{"id":"T_steampunk","tipo":"tema","nombre":"Tema Steampunk","precio":500,"valor":"steampunk"},
+{"id":"S_arcade","tipo":"sonido","nombre":"Pack Arcade","precio":200,"valor":"arcade"},
+{"id":"P_extra","tipo":"pista","nombre":"3 pistas extra","precio":100,"valor":"pista3"}
+]

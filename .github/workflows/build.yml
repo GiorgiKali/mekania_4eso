@@ -1,0 +1,101 @@
+name: Compilar MECANIA 4ESO
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build-windows:
+    name: Windows (.exe)
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Instalar dependencias
+        run: |
+          python -m pip install --upgrade pip
+          pip install PySide6==6.9.3 pyinstaller==6.10.0
+
+      - name: Compilar con PyInstaller
+        run: python -m PyInstaller Mecania4ESO.spec --clean --noconfirm
+
+      - name: Crear LEEME
+        run: |
+          @"
+          ═══════════════════════════════════════════════════════
+          MECANIA 4ESO — Videojuego de Máquinas y Mecanismos
+          ═══════════════════════════════════════════════════════
+
+          CÓMO ABRIR EN WINDOWS 10/11:
+            1. Doble clic en "Mecania4ESO.exe"
+            2. Si Windows avisa ("Windows protegió tu PC"):
+                 Más información → Ejecutar de todas formas
+            3. Regístrate o inicia sesión
+            4. ¡A dominar las 100 preguntas!
+
+          QUÉ INCLUYE:
+            · 100 preguntas tipo test con explicación y pista
+            · Sistema Leitner de repetición espaciada
+            · 6 modos de juego (Estudio, Examen, Supervivencia...)
+            · Duelo 1v1 ONLINE por LAN (misma WiFi)
+            · Ranking global entre todos los usuarios
+            · 5 temas visuales + 3 niveles de calidad gráfica
+            · Avatares personalizados con subida de imagen
+            · Funciona 100% OFFLINE (excepto duelos LAN)
+
+          Tu progreso se guarda automáticamente.
+
+          ═══════════════════════════════════════════════════════
+          Proyecto 4º ESO — curso 2025-2026
+          ═══════════════════════════════════════════════════════
+          "@ | Out-File -FilePath dist\Mecania4ESO\LEEME.txt -Encoding utf8
+
+      - name: Comprimir en ZIP
+        run: Compress-Archive -Path dist\Mecania4ESO\* -DestinationPath Mecania4ESO-Windows.zip
+
+      - name: Subir artefacto
+        uses: actions/upload-artifact@v4
+        with:
+          name: Mecania4ESO-Windows
+          path: Mecania4ESO-Windows.zip
+          retention-days: 90
+
+  build-linux:
+    name: Linux (binario)
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Instalar dependencias del sistema
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libxcb-cursor0 libxcb-xinerama0 libxkbcommon-x11-0 libgl1 libegl1
+
+      - name: Instalar Python deps
+        run: |
+          python -m pip install --upgrade pip
+          pip install PySide6==6.9.3 pyinstaller==6.10.0
+
+      - name: Compilar
+        run: python -m PyInstaller Mecania4ESO.spec --clean --noconfirm
+
+      - name: Comprimir
+        run: tar -czf Mecania4ESO-Linux.tar.gz -C dist Mecania4ESO
+
+      - name: Subir artefacto
+        uses: actions/upload-artifact@v4
+        with:
+          name: Mecania4ESO-Linux
+          path: Mecania4ESO-Linux.tar.gz
+          retention-days: 90

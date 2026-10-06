@@ -1,0 +1,10 @@
+[
+{"id":"racha_10","nombre":"Racha de 10","emoji":"🔥","descripcion":"Consigue 10 aciertos seguidos."},
+{"id":"sin_fallos","nombre":"Sin fallos","emoji":"🎯","descripcion":"Termina una sesión sin fallar."},
+{"id":"rey_palancas","nombre":"Rey de las Palancas","emoji":"🏆","descripcion":"Domina el bloque de palancas."},
+{"id":"ingeniero","nombre":"Ingeniero","emoji":"⚙️","descripcion":"Domina 50 preguntas."},
+{"id":"sabio","nombre":"Sabio de MECANIA","emoji":"🧠","descripcion":"Domina las 100 preguntas."},
+{"id":"rayo","nombre":"Rayo","emoji":"⏱️","descripcion":"20 aciertos en menos de 5 minutos."},
+{"id":"constante","nombre":"Constante","emoji":"📚","descripcion":"Estudia 7 días seguidos."},
+{"id":"perfeccionista","nombre":"Perfeccionista","emoji":"🌟","descripcion":"Consigue un 100% en modo Examen."}
+]

@@ -1,0 +1,12 @@
+[
+{"id":"A1","nombre":"Newton","emoji":"🍎","precio":0,"descripcion":"El padre de la mecánica clásica."},
+{"id":"A2","nombre":"Arquímedes","emoji":"🪝","precio":100,"descripcion":"Dadme un punto de apoyo y moveré el mundo."},
+{"id":"A3","nombre":"Da Vinci","emoji":"⚙️","precio":200,"descripcion":"Genio del Renacimiento e inventor."},
+{"id":"A4","nombre":"Watt","emoji":"💨","precio":300,"descripcion":"Mejoró la máquina de vapor."},
+{"id":"A5","nombre":"Tesla","emoji":"⚡","precio":500,"descripcion":"Genio de la electricidad."},
+{"id":"A6","nombre":"Curie","emoji":"🧪","precio":600,"descripcion":"Pionera de la radiactividad."},
+{"id":"A7","nombre":"Turing","emoji":"🔐","precio":800,"descripcion":"Padre de la computación."},
+{"id":"A8","nombre":"Ada Lovelace","emoji":"👩‍💻","precio":1000,"descripcion":"Primera programadora de la historia."},
+{"id":"A9","nombre":"Mecanobot","emoji":"🤖","precio":1200,"descripcion":"Mascota virtual que te acompaña."},
+{"id":"A10","nombre":"Palanca Dorada","emoji":"🥇","precio":2000,"descripcion":"El avatar legendario de MECANIA."}
+]
